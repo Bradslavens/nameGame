@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Game</title>
+</head>
+<body>
+    <h1>Please enter your name.</h1>
+    <input id="myName" type="text">
+    <button onclick="greet()">Submit</button>
+    <div id="result"></div>
+
+    <script>
+        function greet(){
+            var name = document.getElementById("myName").value;
+            var capitalizedString = capitalizeFirstLetter(name);
+            document.getElementById("result").innerHTML = capitalizedString + " is Cool!";
+        }
+
+        function capitalizeFirstLetter(myString){
+            
+            var firstLetter = myString.charAt(0);
+            var firstLetterCap = firstLetter.toUpperCase();
+            var excludeFirstLetter = myString.slice(1);
+            var capitalizedString = firstLetterCap + excludeFirstLetter;
+
+            return capitalizedString;
+        }
+    </script>
+</body>
+</html>
